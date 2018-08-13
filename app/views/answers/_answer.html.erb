@@ -1,0 +1,18 @@
+<div data-id="<% answer.id %>">
+	<p><%=answer.body %></p>
+	<div>
+		<% if logged_in? && answer.user == current_user %>
+			<%= link_to  " <span class='glyphicon glyphicon-pencil'></span> Editar"
+			.html_safe,
+			edit_question_answer_path(answer.question, answer) %> |
+			<%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
+	        .html_safe, 
+	        question_answer_path(answe.question, answer), method: :delete, 
+	        data: {confirm: "Estás seguro?"} %>
+	    <% end %>
+
+	</div>
+
+</div>
+
+<br>
